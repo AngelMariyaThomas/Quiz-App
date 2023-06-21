@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 
 
+
 const Home = () => {
   const { QuestionArray } = QuestionState()
   console.log(QuestionArray)
@@ -12,16 +13,23 @@ const Home = () => {
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [color, setColor] = useState(false)
+  const[disabled,setDisabled]=useState(0)
 
 
 
   const handleCrct = () => {
     setScore(score + 1)
     setColor(true)
+    setDisabled(true)
   }
   const handleWrong = () => {
     setScore(score)
     setColor(false)
+    setDisabled(true)
+  }
+  const next=()=>{
+    setDisabled(0)
+    setIndex(index + 1)
   }
   return (
     index <= QuestionArray.length - 1 ?
@@ -34,19 +42,19 @@ const Home = () => {
 
           {QuestionArray.slice(index, index + 1).map((item) => {
             return <div>
-
+                   <h5 style={{marginTop:"0",color:"white"}}>Question NO : {index+1}/5</h5>
 
               {item.question}
+              
 
               <ul>
                 {item.options.map((prod) => {
                   return (
                     <div>
-                      <button
-                        onClick={prod == item.answer ? () => { handleCrct() } : () => { handleWrong() }}
-
-                        className={color ? "answers answer-correct" : "answer-wrong"}>{prod}</button>
-
+                      {prod==item.answer ?(<><button onClick={()=>handleCrct()} className='answers answer-correct' disabled={disabled} >{prod}</button></>):(<>
+                      <button onClick={()=>handleWrong()} className='answers answer-wrong' disabled={disabled}>{prod}</button></>)}
+                      
+                    
                     </div>
                   )
                 })}
@@ -56,7 +64,7 @@ const Home = () => {
 
           })}
 
-          <button className='next' onClick={() => setIndex(index + 1)}>Next>></button>
+          <button className='next'  onClick={() =>{next()}}>Next>></button>
 
         </div>
         <p>Score:{score}/5</p>
@@ -66,9 +74,24 @@ const Home = () => {
       </div>)
       : (
         <div className='card'>
-        <h1 style={{textAlign:'center',color:"white",marginTop:'100px',marginLeft:'10px'}}>Score:{score}/5</h1>
-         <p style={{color:'red',fontSize:'40px',textAlign:'center',marginTop:"200px",marginLeft:"6px"}}> GAME OVER!</p>
+      <div className='score-container'>
+        <h1 style={{color:"red",fontSize:"50px"}}>Game Over</h1>
+        {score<QuestionArray.length-1?(
+          <>
+          <h3>Try Again..!</h3>
+          <span>
+            Your score : {score}/5
+          </span>
+          </>
+      
+        ):(<>
+        <h3>Well played!</h3>
+        <span>Your score : {score}/5</span>
+        </>)}
+
+      </div>
         </div>
+       
       )
   )
 }
