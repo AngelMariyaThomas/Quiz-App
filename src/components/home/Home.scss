@@ -2,15 +2,49 @@ body{
     background-color: lavender;
 
 }
+
+button {
+  width: 300px;
+  height: 50px;
+  margin-left: 8px;
+  border-color: rgb(105, 105, 158);
+  color:rgb(48, 48, 165) ;
+  border-radius: 15px;
+  cursor: pointer;
+  
+
+
+}
+
+.correct{
+   
+  cursor: not-allowed;
+  &:disabled{
+    background-color:green;
+    cursor:not-allowed;
+    
+  }
+
+}
+.wrong{
+  cursor: not-allowed;
+
+  &:disabled{
+    background-color: red;
+    cursor:not-allowed;
+  }
+}
+
 .container{
     text-align: center;
     font-size: 20px;
-    color: rgb(95, 95, 155);
+    color: rgb(28, 28, 82);
+    margin-left: 50px;
 
 
 
 .card {
-    box-shadow: 4px 6px 10px 0 rgba(50, 13, 185, 0.2);
+    box-shadow: 4px 6px 10px 0 rgba(66, 22, 224, 0.2);
     transition: 0.3s;
     border-radius: 5px;
     width: 400px;
@@ -26,34 +60,6 @@ body{
     margin-top: 60px;
   }
 
-  button {
-    width: 300px;
-    height: 50px;
-    margin-left: 1px;
-    border-color: rgb(105, 105, 158);
-    color:rgb(105, 105, 158) ;
-    border-radius: 15px;
-    
- 
-  }
-  .answer-correct{
-    &:focus{
-      background-color: green;
-    }
-    .disabled{
-      background-color: green;
-    }
-
-  }
-  .answer-wrong{
-    &:focus{
-      background-color: red;
-    }
-    .disabled{
-      background-color: red;
-    }
-    
-  }
   p{
     margin-right: 100px;
     margin-top: 10px;
@@ -65,17 +71,19 @@ body{
 
   .next{
     margin-top: 400px;
-   width: 100px;
-   margin-right: 300px;
-   margin-left: 1px;
+   width: 90px;
+   height: 20px;
+   margin-right: 800px;
+   margin-left: 0px;
    border: none;
     color:rgb(105, 105, 158) ;
     border-radius: 10px;
+    cursor:auto;
   }
 
 }
 .card {
-  box-shadow: 4px 6px 10px 0 rgba(50, 13, 185, 0.2);
+  box-shadow: 4px 6px 10px 0 rgba(49, 5, 207, 0.2);
   transition: 0.3s;
   border-radius: 5px;
   width: 400px;

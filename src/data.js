@@ -5,8 +5,8 @@ export const questions =[
         answer:"largest railway station" ,
         options:["highest railway station",
                 "longest railway station",
-                "None of the above",
-                "largest railway station"] ,
+                "largest railway station",
+                "None of the above"] ,
      
     },
 
