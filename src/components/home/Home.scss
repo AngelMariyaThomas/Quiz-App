@@ -6,10 +6,11 @@ body{
 button {
   width: 300px;
   height: 50px;
-  margin-left: 8px;
+  margin-left: 6px;
   border-color: rgb(105, 105, 158);
   color:rgb(48, 48, 165) ;
   border-radius: 15px;
+  font-size: 14px;
   cursor: pointer;
   
 
@@ -18,7 +19,7 @@ button {
 
 .correct{
    
-  cursor: not-allowed;
+
   &:disabled{
     background-color:green;
     cursor:not-allowed;
@@ -27,7 +28,7 @@ button {
 
 }
 .wrong{
-  cursor: not-allowed;
+ 
 
   &:disabled{
     background-color: red;
@@ -40,6 +41,15 @@ button {
     font-size: 20px;
     color: rgb(28, 28, 82);
     margin-left: 50px;
+     
+
+    h1{
+      margin-left: 500px;
+      margin-top: 50px;
+    }
+    p{
+      margin-left: 500px;
+    }
 
 
 
@@ -51,17 +61,19 @@ button {
     height: 500px;
     display: flex;
     margin-left: 700px;
-    margin-top: 70px;
+    margin-top: 80px;
     font-size: 20px;
     align-items: center;
     background-color: rgb(151, 151, 207);
   
   h1{
-    margin-top: 60px;
+    margin-top: 120px;
+    font-size: 25px;
+  
   }
 
   p{
-    margin-right: 100px;
+    margin-right: 200px;
     margin-top: 10px;
     font-size: 30px;
   }
@@ -70,16 +82,22 @@ button {
 
 
   .next{
-    margin-top: 400px;
-   width: 90px;
+    margin-top: 80px;
+   width: 80px;
    height: 20px;
-   margin-right: 800px;
-   margin-left: 0px;
+   margin-right: 80px;
+   margin-left: 400px;
    border: none;
     color:rgb(105, 105, 158) ;
     border-radius: 10px;
     cursor:auto;
+    
   }
+
+  .closebutton{
+    width: 50px;
+    height: 30px;
+   }
 
 }
 .card {
@@ -111,5 +129,6 @@ button {
 
   }
  }
+
 }
 
